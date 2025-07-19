@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(7, 25, 55);
+    padding: 20px; 
+    
+}
+.contenedor{
+    width: 90vw;
+    max-width: 500px;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+}
+
+body.fin, .contenedor.fichas{
+    pointer-events: none;
+}
+.fichas{
+    width: 100%;
+    background-color: rgba(7, 25, 55, 0.5);
+    position: relative;
+    padding-top: 100%;
+    border: 4px solid rgb(75, 96, 134);
+}
+
+.titulo{
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+.jugadorX{
+    background-image: url(../img/X.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+.jugadorY{
+    background-image: url(../img/O.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+.revancha{
+    padding: 20px 20px;
+    cursor: pointer;
+    background-color: rgb(7, 25, 55);
+    color: white;
+    text-decoration: none;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    display: none;
+    border: 2px solid white;
+}
+body.fin .revancha {
+    opacity: 1;
+    display: inline-block;
+    pointer-events: auto;
+}
+
+
+
+
+
+
+.background{
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+    overflow: hidden;
+}
+.bubbles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.bubbles span{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background: #FF66C4;
+    margin: 0 5px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #B83084,
+    0 0 50px #FF66C4,
+    0 0 100px #FF66C4;
+    animation: subir 15s linear infinite;
+    animation-duration: calc(130s / var(--delay));
+}
+.bubbles span:nth-child(even){
+    background: #0FB2B8;
+    box-shadow: 0 0 0 10px #007F96,
+    0 0 50px #0FB2B8,
+    0 0 100px #0FB2B8;
+}
+@keyframes subir {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-100vh) scale(1);
+    }
+
+}
