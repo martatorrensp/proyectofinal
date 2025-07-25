@@ -15,6 +15,12 @@ body{
     padding: 20px; 
     
 }
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .contenedor{
     width: 90vw;
     max-width: 500px;
