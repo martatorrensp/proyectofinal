@@ -61,7 +61,7 @@ body.fin, .contenedor.fichas{
     background-size: 50%;
 }
 .revancha{
-    padding: 20px 20px;
+    padding: 5px 20px;
     cursor: pointer;
     background-color: rgb(7, 25, 55);
     color: white;
@@ -70,7 +70,7 @@ body.fin, .contenedor.fichas{
     font-family: "Goldman", sans-serif;
     font-size: 1.5rem;
     display: none;
-    border: 2px solid white;
+    border: 1px dashed rgb(75, 96, 134);
 }
 body.fin .revancha {
     opacity: 1;
