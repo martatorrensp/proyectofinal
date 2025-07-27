@@ -1,17 +1,31 @@
+<!-- Descripción:  Este archivo contiene la página principal del sitio web.
+Estructura general:
+Encabezado 
+Contenido principal
+ - Fondo animado 
+ - Sección del juego 
+    · Título del juego 
+    · Botón de revancha 
+    · Tablero -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Enlace al archivo JavaScript -->
     <script defer src="js/funciones.js"></script>
+    <!-- Enlace a los estilos CSS -->
     <link rel="stylesheet" href="css/estilos.css">
+    <!-- Fuentes de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background">
+    <!-- INICIO: Fondo animado de burbujas (decorativo) -->
+    <div class="background"> 
         <div class="bubbles">
+            <!-- Cada burbuja tiene una velocidad distinta usando la variable --delay -->
             <span style="--delay:23;"></span>
             <span style="--delay:12;"></span>
             <span style="--delay:17;"></span>
@@ -46,11 +60,15 @@
             <span style="--delay:10;"></span>
         </div>
     </div>
+    <!-- FIN: Fondo animado -->
 
+    <!-- INICIO: Contenido del juego -->
     <section>
+        <!-- Título del juego -->
         <h1 class="titulo">Tres en raya</h1>
+        <!-- Botón para reiniciar el juego cuando termina -->
         <a href="#" class="revancha">¿Quieres la revancha?</a>
-
+        <!-- INICIO: Tablero del juego -->
         <div class="contenedor">
             <div class="fichas"></div>
             <div class="fichas"></div>
@@ -62,6 +80,8 @@
             <div class="fichas"></div>
             <div class="fichas"></div>
         </div>
+        <!-- FIN: Tablero del juego -->
     </section>
+    <!-- FIN: Contenido juego -->
 </body>
 </html>

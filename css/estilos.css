@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/*Estilos generales del body*/
 body{
     height: 100vh;
     display: flex;
@@ -12,15 +13,16 @@ body{
     justify-content: center;
     text-align: center;
     background-color: rgb(7, 25, 55);
-    padding: 20px; 
-    
+    padding: 20px;  
 }
+/*Sección principal (titulo, tablero y botón)*/
 section{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+/*Tablero de 3x3*/
 .contenedor{
     width: 90vw;
     max-width: 500px;
@@ -30,36 +32,42 @@ section{
     grid-template-rows: repeat(3, auto);
 }
 
+/*Evita que se pueda hacer clic si el juego ha terminado*/
 body.fin, .contenedor.fichas{
     pointer-events: none;
 }
+
+/*Estilo de cada ficha del tablero*/
 .fichas{
     width: 100%;
-    background-color: rgba(7, 25, 55, 0.5);
+    background-color: rgba(7, 25, 55, 0.5); /* Semitransparente */
     position: relative;
-    padding-top: 100%;
+    padding-top: 100%; /* Mantiene la proporción cuadrada */
     border: 4px solid rgb(75, 96, 134);
-    border-radius: 50%;
+    border-radius: 50%; /* Forma redonda */
 }
-
+/*Título principal del juego*/
 .titulo{
     font-family: "Press Start 2P", system-ui;
     font-size: 3rem;
     margin-bottom: 20px;
     color: white;
 }
+/*Imagen para el jugador X*/
 .jugadorX{
     background-image: url(../img/X.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
 }
+/*Imagen para el jugador O*/
 .jugadorY{
     background-image: url(../img/O.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
 }
+/*Botón de revancha (aparece al terminar la partida)*/
 .revancha{
     padding: 5px 20px;
     cursor: pointer;
@@ -72,6 +80,7 @@ body.fin, .contenedor.fichas{
     display: none;
     border: 1px dashed rgb(75, 96, 134);
 }
+/* Mostrar botón revancha al finalizar el juego */
 body.fin .revancha {
     opacity: 1;
     display: inline-block;
@@ -81,7 +90,7 @@ body.fin .revancha {
 
 
 
-
+/* Fondo animado */
 
 .background{
     position: fixed; 
@@ -89,9 +98,10 @@ body.fin .revancha {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -100;
+    z-index: -100; /* Para que quede en el fondo */
     overflow: hidden;
 }
+/* Contenedor burbujas */
 .bubbles{
     position: absolute;
     top: 0;
@@ -103,6 +113,7 @@ body.fin .revancha {
     justify-content: center;
     align-items: center;
 }
+/*Estilo de cada burbuja*/
 .bubbles span{
     display: block;
     position: relative;
@@ -115,20 +126,22 @@ body.fin .revancha {
     0 0 50px #FF66C4,
     0 0 100px #FF66C4;
     animation: subir 15s linear infinite;
-    animation-duration: calc(130s / var(--delay));
+    animation-duration: calc(130s / var(--delay)); /* Diferente velocidad según delay */
 }
+/*Alternar color de burbujas (pares)*/
 .bubbles span:nth-child(even){
     background: #0FB2B8;
     box-shadow: 0 0 0 10px #007F96,
     0 0 50px #0FB2B8,
     0 0 100px #0FB2B8;
 }
+/*Animación de subida*/
 @keyframes subir {
     0.00001%{
-        transform: translateY(100vh) scale(0);
+        transform: translateY(100vh) scale(0); /* Comienza desde abajo, pequeñita */
     }
     100%{
-        transform: translateY(-100vh) scale(1);
+        transform: translateY(-100vh) scale(1); /* Termina arriba y más grande */
     }
 
 }
